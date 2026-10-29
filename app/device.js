@@ -2,11 +2,10 @@
 (function () {
   'use strict';
   var IDS = {
-    stremio: 'IkWsFHtOY9.Stremio', netflix: 'org.tizen.netflix-app',
-    disneyplus: 'MCmYXNxgcu.DisneyPlus', youtube: '9Ur5IzDKqV.TizenYouTube',
-    appletv: 'com.samsung.tv.aria-video', primevideo: 'org.tizen.primevideo',
-    abciview: 'mWK87Xghap.ABCiview', sbs: 'OyE7OuxlUi.SBSOnDemand',
-    applemusic: 'org.tizen.apple.apple-music'
+    youtube: '9Ur5IzDKqV.TizenYouTube', wow: 'Mo5FtpAjGy.Skyonline',
+    disneyplus: 'MCmYXNxgcu.DisneyPlus', ard: 'SrAoJxGQUf.ARD',
+    zdf: 'yPSlpvfeTf.ZDFmediathek', netflix: 'org.tizen.netflix-app',
+    primevideo: 'org.tizen.primevideo'
   };
   var STREAMING = ['as6cYRgkPy.Binge', '73iTZRTc34.Stan', '5b8c3eb16b.BeamCTVDev',
     'cj37Ni3qXM.HBONow', 'LBUAQX1exg.Hulu', 'gzcc4LRFBF.Peacock', 'rJyOSqC6Up.CBSAllAccess',
@@ -19,7 +18,9 @@
   var EXTRA_BRANDS = {'rJeHak5zRg.Spotify': 'spotify', '5b8c3eb16b.BeamCTVDev': 'hbomax', 'cj37Ni3qXM.HBONow': 'hbomax', '3KA0pm7a7V.TubiTV': 'tubi'};
   var INTERNAL = ['adplatform.ADPlayer', 'WykOS4t4F0.cmsWebApp', '25emanual3.emanual',
     'd0m1lV1nt2.emanual', '2022ePop01.SmartTV',
-    'ZODRT12q2l.WebAccountExtension', 'ByJlgt0XeD.CastSettingsApp', 'tv6pbVMQFF.PrivacyChoices'];
+    'ZODRT12q2l.WebAccountExtension', 'ByJlgt0XeD.CastSettingsApp', 'tv6pbVMQFF.PrivacyChoices',
+    'SrAoJxGQUf.ContinueWatchingService', 'yPSlpvfeTf.ZDFmediathekCWService', 'MCmYXNxgcu.DisneyPlusService',
+    'rJeHak5zRg.SpotifyService', 'org.tizen.primevideo_companionapp', 'com.samsung.tv.cobalt-app-1566'];
   var SELF = 'nClrkHome1.FrameHome';
   function api() { return window.tizen && window.tizen.application; }
   function selfId() {
