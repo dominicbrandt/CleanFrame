@@ -16,9 +16,9 @@
   /* Serif home row, in the owner's order. IDs read from this TV's installed-app list. */
   var PRIMARY_APPS = [
     { id: 'youtube', name: 'YouTube', mark: true, appId: '9Ur5IzDKqV.TizenYouTube' },
-    { id: 'wow', name: 'WOW', mark: false, appId: 'Mo5FtpAjGy.Skyonline' },
+    { id: 'wow', name: 'WOW', mark: false, word: 'WOW', appId: 'Mo5FtpAjGy.Skyonline' },
     { id: 'disneyplus', name: 'Disney+', mark: true, appId: 'MCmYXNxgcu.DisneyPlus' },
-    { id: 'ard', name: 'ARD Mediathek', mark: false, appId: 'SrAoJxGQUf.ARD' },
+    { id: 'ard', name: 'ARD Mediathek', mark: false, word: 'ARD', appId: 'SrAoJxGQUf.ARD' },
     { id: 'zdf', name: 'ZDF', mark: true, appId: 'yPSlpvfeTf.ZDFmediathek' },
     { id: 'netflix', name: 'Netflix', mark: true, appId: 'org.tizen.netflix-app' },
     { id: 'primevideo', name: 'Prime Video', mark: true, appId: 'org.tizen.primevideo' }
@@ -138,6 +138,8 @@
   }
   function appMark(a, w, h, size) {
     if (a.mark && (maskSupport || S.c.bg !== 'light')) return markHtml(a.brand || a.id, w, h, size);
+    /* Apps with no bundled logo show their name as a white wordmark, not a boxed monogram. */
+    if (a.word) return '<span class="mark wordmark" style="width:' + w + 'px;height:' + h + 'px;font-size:' + Math.round(size * 0.46) + 'px"><span>' + esc(a.word) + '</span></span>';
     var words = a.name.split(/\s+/), letters = words[0].charAt(0) + (words.length > 1 ? words[1].charAt(0) : '');
     return '<span class="mark monogram' + (a.icon ? ' native-icon' : '') + '" style="width:' + w + 'px;height:' + h + 'px;font-size:' + Math.round(size * .65) + 'px"><span>' + esc(letters.toUpperCase()) + '</span>'
       + (a.icon ? '<img alt="" data-native-icon="true" src="' + esc(a.icon) + '">' : '') + '</span>';
