@@ -645,3 +645,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000}
 .bg-light .quiet-utils .u,.bg-light .quiet-utils .u.is-focus{color:#fffbf4}
 .bg-light .quiet-utils .u.is-idle{color:rgba(255,251,244,.5)}
 .bg-light .quiet-utils .ut-lens.on-focus{background:rgba(255,251,244,.18)}
+
+/* ---------- Home headline ---------- */
+.headline{position:absolute;left:112px;right:112px;top:300px;font-size:190px;line-height:1;font-weight:500;letter-spacing:-6px;color:var(--ink);white-space:nowrap;overflow:hidden;display:none}
+.at-home.l-dock .headline{display:block}
+.bg-photo .headline{text-shadow:0 2px 14px rgba(0,0,0,.38)}
+.bg-dark .headline,.bg-light .headline{text-shadow:none}
